@@ -1,0 +1,81 @@
+// 这是用来说明数据格式的文件
+// 此文件说明的数据为前端所用的数据格式
+
+// 全局常量名（之后正式定义在工程里，所有模块如有需要(比如长度检查)都应使用常量库中的常量，这样便于维护）格式建议为 max等等前缀_对应数据名
+    {
+        max_staffID, // 员工id的最大值
+        max_staffName, // 员工name的字符串的最长值
+        max_staffPIN,
+
+        max_productID,
+        max_productName,
+        max_productSpec,
+
+        max_boxID,
+        range_boxColor,
+
+        max_cusID,
+        max_cusName,
+        max_phone,
+        max_cusAddr,
+
+        max_projectID,
+        max_projectName,
+
+        max_jobName,
+
+        max_lengthAndWidth, // [max_l,max_w]
+    }
+
+// 全局变量名
+    {
+        isLogin:Boolean
+
+    }
+
+    
+// 模块data（以前端路由的形式组织类别）
+// 基础信息 格式建议为驼峰命名法 
+    //员工录入
+        {
+            staffID:Number,
+            staffName:String,
+            staffPIN:String
+        }
+    //产品录入
+        {
+            productID:Number,
+            productName:String,
+            productSpec:Number // 产品规格，数据类型暂时不知道（后端暂时为double）
+        }
+    //分箱颜色
+        {
+            boxID:Number,
+            boxColor:String
+        }
+    //客户录入
+        {
+            cusID:Number,
+            cusName:String,
+            cusPhone:Number,
+            cusAddr:String,
+            fileList:[{ // logo图片
+                name:String,
+                url:String
+            },] // el Upload的数据格式   [数组项,] 意思是若干项数组
+        }
+    //项目管理
+        {
+            projectID:Number,
+            projectName:String
+        }
+    //岗位
+        {
+            jobName:String 
+            // #id字段为后端数据库用于作为主键，前端没有此字段
+        }
+    //备品规格录入
+        {
+            lengthAndWidth:[Number,Number]
+        }
+    
